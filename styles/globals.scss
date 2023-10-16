@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Gruppo&family=Handjet&family=Montserrat&family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: 'Montserrat', sans-serif;
+}
+body {
+    background-color: black;
+}
+
+@import '_similar';
+@import 'header';
+@import 'home';
+@import 'about';
