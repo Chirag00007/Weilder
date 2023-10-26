@@ -28,7 +28,7 @@ export default function Home() {
               <div className="flex flex-row items-center py-[6px] px-4 bg-discount-gradient rounded-[10px]  md:mx-[0.1px] mx-auto mb-4">
                 <Image className="w-[32px] h-[32px]"  width={100} height={100} src={'/image/code.PNG'}></Image>
                 <p className={`${styles.paragraph} ml-2 ss:text-[15px] text-[10px] font-poppins font-normal text-dimWhite leading-[30.8px]`}>
-                  <span className="text-sky-400">Weilder's</span> don't code!{" "}
+                  <span className="text-sky-400">We</span> don't code!{" "}
                   <span className="text-sky-400">Code</span> Decode Us!
                 </p>
               </div>

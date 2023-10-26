@@ -4,7 +4,7 @@ import { faFaceRollingEyes } from '@fortawesome/free-solid-svg-icons'
 import Particles from '@/components/Client/Particles'
 
 export default function NotFound() {
-  return (
+  return ( 
     <>
       <div className="w-full min-h-[90vh] flex items-center justify-center bg-primary relative">
         <div style={{zIndex : '3'}} className="absolute top-0 left-0 w-full h-full ">
