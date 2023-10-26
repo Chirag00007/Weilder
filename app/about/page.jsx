@@ -1,11 +1,11 @@
-import React from 'react'
-import Team from './Team'
-import data from './data'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import About from "@/components/Client/About"
+import Developer from "@/components/Client/Developer"
+import styles from "../style"
+
 
 export const metadata = {
-  title: `Weilder's About`,
-  description : `Know about our team and about weilder's work in IT.`
+  title: `Weilder's About - Our Team`,
+  description: `Know about our team and about weilder's work in IT. We provides solution of web application and mobile application, which helps to grow business more.`
 }
 
 
@@ -14,18 +14,11 @@ const page = () => {
   return (
 
     <>
-      <div className="about_page">
-        <div className="about_card">
-           {data.map(e => {
-              return <div key={e.index} className='card'>
-        
-                <FontAwesomeIcon icon={e.icon}  size='3px' beat fade/>
-             <h2>{e.name}</h2>
-             <p>{e.description}</p>
-         </div>
-           })}
-        </div>
-        <Team/>
+      <div className={`bg-primary ${styles.paddingX} ${styles.flexCenter}`}>
+      <div className={`${styles.boxWidth}`}>
+        <About />
+        <Developer />
+      </div>
       </div>
     </>
 

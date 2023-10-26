@@ -1,15 +1,18 @@
 import React from 'react'
-import ContactForm from '@/components/server/ContactForm'
-import Contact from './Contact'
+import styles from '../style'
+import Contact from '@/components/Client/Contact'
 
 const page = () => {
-  return (
+    return (
     <>
-      <Contact>
-        <ContactForm/>
-      </Contact>
-    </>
-  )
+            <div className={`bg-primary ${styles.paddingX} ${styles.flexCenter}`}>
+                <div className={`${styles.boxWidth}`}>
+                        <Contact/>
+                </div>
+                </div>
+
+            </>
+            )
 }
 
-export default page
+            export default page

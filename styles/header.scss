@@ -1,32 +1,35 @@
 .nav_bar {
-    @include bgBlur();
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 90%;
-    height: 50px;
-    position: fixed;
+    width: 100%;
+    max-width: 100vw;
+    height: 60px;
     color: white;
-    top: 10px;
-    left: 5%;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 30px;
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    -ms-border-radius: 30px;
-    -o-border-radius: 30px;
-    z-index: 2;
+    padding-left: 15px;
+    padding-right: 15px;
+    z-index: 9;
+    overflow: hidden;
+}
+.fixed_blur {
+    background: rgba(11, 12, 17, 0.527);
+    backdrop-filter: blur(5px);
+    backface-visibility: hidden;
+    position: fixed;
+    z-index: 9;
+}
+.relative_bg {
+    position: relative;
 }
 .logo {
     a {
     font-family: $logoFont;
-    padding: 10px;
-    font-size: 2rem;
+    font-size: 30px;
     font-weight: 600;
     letter-spacing: 1px;
     text-decoration: none;
     color: white;
+    margin-left: 15px;
     }
 } 
 
@@ -55,6 +58,10 @@
 .login_btn {
     @include mainBtn( $btnGradient2 ,  $btnShadow2)
 }
+.nav_right {
+    display: flex;
+    gap: 10px;
+}
 @media (max-width : 900px) {
     .nav_list {
         a {
@@ -65,16 +72,18 @@
         padding: 8px 18px;
     }
 }
-
+.login_box {
+    @include bgBlur()
+}
 .bottom_nav_list {
-    @include bgBlur();
     @include starterCss(50px, 100%);
-    z-index: 2;
+    overflow-x: hidden;
+    z-index: 9;
     justify-content: space-around;
     a {
         color: $text1;
         font-size: $contentFont;
-        margin: auto 2rem;
+        margin: auto 5px;
         text-decoration: none;
         display: flex;
         flex-direction: column;
@@ -96,4 +105,17 @@
     .bottom_nav_list {
         display: flex;
     }
+    .nav_right {
+        gap: 5px;
+        a {
+            margin: 5px ;
+        }
+    }
+
+}
+@media (max-width : 500px) {
+   .contact_btn {
+    display: none;
+   }
+
 }
