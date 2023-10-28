@@ -3,6 +3,11 @@ import styles from '../style'
 import ArticleCard from './ArticleCard'
 import articles from './data'
 
+export const metadata = {
+    title : "Weilders - Articles ",
+    description : "Read the articles to know more and get awared to the new technologies in world Of IT, to stay well in business."
+}
+
 const page = () => {
     return (
         <>

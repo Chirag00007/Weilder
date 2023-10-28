@@ -31,10 +31,6 @@ const Footer = () => (
                         >
                             Contact Us
                         </Link>
-                        <Link href={'/joinTeam'} className={`w- my-1 font-poppins font-normal text-[16px] leading-[24px] text-dimWhite hover:text-secondary cursor-pointer mb-3"                 }`}
-                        >
-                            Hiring
-                        </Link>
                         <Link href={'/articles'} className={`w-full my-1 font-poppins font-normal text-[16px] leading-[24px] text-dimWhite hover:text-secondary cursor-pointer mb-3"                 }`}
                         >
                             Blogs

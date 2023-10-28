@@ -17,5 +17,11 @@ const threadsSchema = new mongoose.Schema({
         type: String,
          author: { type: mongoose.Schema.Types.ObjectId,  ref: 'User' }
      }],
-
+     createdAt : {
+        type : Date,
+        default : Date.now,
+     }
 })
+
+const thread = mongoose.models.Thread || mongoose.model("Thread" , threadsSchema);
+export default thread;

@@ -1,5 +1,5 @@
 .article_card {
-    width: 290px;
+    width: 310px;
     height: 430px;
     z-index: 2;
     display: flex;
@@ -23,7 +23,7 @@
     .aContent {
         flex-basis: 50%;
         width: 100%;
-
+        padding: 10px;
         h2 {
             color: white;
             font-size: 18px;

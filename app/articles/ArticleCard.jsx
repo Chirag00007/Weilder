@@ -1,11 +1,15 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+
+export const metaData = {
+    title : `Know More about Developement - Weilder's Articles`,
+    description : `Read the articles on web developement , android development, blockchain and web3. To understand more about today's trending technology and what is good for you!`
+}
 
 const ArticleCard = ({title, desc , author , image , id}) => {
     return (
         <>
-            <div className="article_card rounded-xl m-[15px]  ">
+            <div className="article_card rounded-xl m-[15px]  shadow-black shadow-lg cursor-pointer hover:translate-y-2 transition-all ">
                 <div className="aImg">
                     <Image src={image} width={1000} height={1000} alt='web' />
                 </div>
