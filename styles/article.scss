@@ -24,6 +24,7 @@
         flex-basis: 50%;
         width: 100%;
         padding: 10px;
+
         h2 {
             color: white;
             font-size: 18px;
@@ -45,122 +46,69 @@
 
 }
 
-.profile_box {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: column;
+.threadCard {
+    width: 270px;
+    height: 250px;
+    @include bgBlur();
     overflow: hidden;
-    .top_box {
-        width: 90%;
-        margin: 10px auto;
-        padding-top: 20px;
-        display: flex;
-        align-items: center;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 3;
+    cursor: pointer;
+
+    .thread_profile {
+        height: 50px;
+        width: 100%;
+        @include allCenter();
         justify-content: flex-start;
 
         img {
-            width: 100px;
-            height: 100px;
-            overflow: hidden;
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
-
         }
 
-        .main_info {
-            flex-basis: 35%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
+        h2 {
+            font-size: 13px;
+            color: white;
+            margin-left: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
         }
-
-        .thread_info {
-            flex-basis: 65%;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-
-            .button_pfp {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;
-                padding: 10px;
-                margin-left: 30px;
-            }
-        }
-
     }
 
-    .threads_box {
-        width: 90%;
-        margin: 10px auto;
-        padding-top: 40px;
+    .thread_main {
+        height: 150px;
+        width: 100%;
+        text-align: start;
+
+        p {
+            color: white;
+            font-size: 11px;
+
+        }
+    }
+
+    .thread_actions {
         display: flex;
-        align-items: flex-start;
-        justify-content: center;
-        flex-direction: column;
-        border-top: 0.5px solid white;
-        text-align: center;
-
-        .thread_cont {
-            width: 100%;
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin: 30px auto;
-
-            .thread_cards {
-                width: 140px;
-                height: 140px;
-                background-color: rgba(255, 255, 255, 0);
-                border: 0.5px solid white;
-                margin: 5px;
-                @include allCenter();
-            }
-        }
-    }
-}
-
-@media (max-width : 780px) {
-    .top_box {
-        flex-direction: column;
-
-        .main_info {
-            flex-direction: row;
-            margin-bottom: 40px;
-            width: 100%;
+        padding: 5px;
+        width: 100%;
+        height: 50px;
+        text-align: start;
+        align-items: flex-end;
+        border-top: 0.3px solid rgba(255, 255, 255, 0.17);
+        a,
+        button {
+            font-size: 18px;
+            color: white;
+            margin: 0 10px;
+            font-weight: 300;
         }
 
-        .thread_info {
-            justify-content: space-between;
-            align-items: center;
-
-            div {
-                width: 70px;
-                height: 70px;
-
-                h1 {
-                    font-size: 18px;
-                }
-
-                p {
-                    font-size: 8px;
-                }
-            }
-
-            .button_pfp {
-                margin-left: 10px!important;
-                a {
-                    font-size: 10px;
-                    padding: 5px 10px;
-                    margin: 5px auto;
-                }
-            }
-        }
     }
 }
