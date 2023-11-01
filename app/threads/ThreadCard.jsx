@@ -43,7 +43,7 @@ const ThreadCard = ({ id, title, createdBy, image, like, comment, views, created
   const { data: session } = useSession();
   const [liked, setLiked] = useState(false);
 
-
+// Like functionality 
   const handleLike = async () => {
     try {
       await fetch(`/api/threads/like/${id}`, {
@@ -64,14 +64,12 @@ const ThreadCard = ({ id, title, createdBy, image, like, comment, views, created
       console.log(error)
     }
   }
-
-  if(session?.user) {
+// Checking if liked already 
     useEffect(() => {
-
       const checkUserLike = async () => {
         try {
           const response = await fetch(`/api/threads/hasLike/${id}/user/${session?.user.id}`);
-
+          console.log(response)
 
           if (response.status === 200) {
             setLiked(true);
@@ -83,12 +81,13 @@ const ThreadCard = ({ id, title, createdBy, image, like, comment, views, created
         }
       };
 
-      checkUserLike();
-
+      if(session?.user) {
+        checkUserLike();
+      }
     }, [id, session]);
-  }
   
-    // views counting 
+  
+// views counting 
     const handleClick = async() => {
       try {
         await fetch(`/api/threads/views/${id}`).then((res) => console.log('view added'))
@@ -97,6 +96,7 @@ const ThreadCard = ({ id, title, createdBy, image, like, comment, views, created
       }
     }
 
+// handle share 
     const handleShare = async () => {
       if (navigator.share) {
         // Use the Web Share API for sharing
