@@ -65,7 +65,7 @@ const ThreadCard = ({ id, title, createdBy, image, like, comment, views, created
     }
   }
 
-
+  if(session?.user) {
     useEffect(() => {
 
       const checkUserLike = async () => {
@@ -86,6 +86,7 @@ const ThreadCard = ({ id, title, createdBy, image, like, comment, views, created
       checkUserLike();
 
     }, [id, session]);
+  }
   
     // views counting 
     const handleClick = async() => {
