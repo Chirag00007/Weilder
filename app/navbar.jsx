@@ -13,6 +13,7 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import Image from 'next/image'
 
 
 
@@ -104,7 +105,7 @@ const navbar = () => {
       }).then(res => {
         if (res.ok) {
           setOpen(false)
-          router.push(`/profile/${session?.user.id}`)
+          router.push(`/profile`)
         }
       })
 
@@ -137,7 +138,7 @@ const navbar = () => {
           {session?.user ?
             <>
               <div ref={ref} className="w-[40px] h-[40px] rounded-full flex align-center justify-center cursor-pointer relative " onClick={toggleMenu}>
-                <img src={session.user.image} alt={session.user.name} className='w-[40px] h-[40px] rounded-full' />
+                <Image width={100} height={100} loader={() => session.user.image} src={session.user.image} alt={session.user.name} className='w-[40px] h-[40px] rounded-full' />
               </div>
 
             </>
@@ -159,14 +160,14 @@ const navbar = () => {
         session?.user && (isOpen && (
           <div style={{ zIndex: '8', overflow: 'hidden' }} className=" blurry fixed  mt-2 top-[52px] right-[15px] rounded-lg shadow-lg w-[150px]">
             <Link
-              href={`/profile/${session?.user.id}`}
+              href={`/profile`}
               className="block px-4 py-2  text-[13px] text-white hover:bg-gray-500"
             >
               Profile
             </Link>
             <button
               onClick={handleClickOpen}
-              className="block px-4 py-2  text-[13px] text-white hover:bg-gray-500"
+              className="block w-[100%] text-start px-4 py-2  text-[13px] text-white hover:bg-gray-500"
             >
               Create Thread
             </button>
@@ -203,7 +204,7 @@ const navbar = () => {
           </DialogContent>
           <DialogActions className='mb-2'>
             <Button className='text-white font-poppins bg-red-400' variant='outlined' color="error" onClick={handleClose} >Cancel</Button>
-            <Button type='submit' className='text-white font-poppins bg-blue-500' variant='contained' color="success" onClick={handleThread} >Subscribe</Button>
+            <Button type='submit' className='text-white font-poppins bg-blue-500' variant='contained' color="success" onClick={handleThread} >Create</Button>
           </DialogActions>
         </Dialog>
       </ThemeProvider>

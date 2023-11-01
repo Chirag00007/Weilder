@@ -6,7 +6,7 @@ const articles = [
     src: '/image/article/soft.jpg',
     author: 'Weilders Team',
     date: 'October 1, 2023',
-    desc: "Website development is the fastest growing technology, which enhance and boosts the power and sale of business, no matters business is related to products, services or marketing.",
+    desc: "Website development is the fastest growing technology, which enhance and boosts the power and sale of business.",
     content: ` <div class=" text-white py-8 lg:py-12">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <article class="prose prose-blue sm:prose-lg lg:prose-xl text-gray-300">

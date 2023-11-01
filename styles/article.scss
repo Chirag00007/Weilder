@@ -1,6 +1,6 @@
 .article_card {
     width: 310px;
-    height: 430px;
+    height: 350px;
     z-index: 2;
     display: flex;
     flex-direction: column;
@@ -28,12 +28,11 @@
         h2 {
             color: white;
             font-size: 18px;
-            font-weight: 600;
         }
 
         p {
-            color: white;
-            font-size: 12px;
+            color: rgb(192, 190, 190);
+            font-size: 10px;
         }
 
         .read_more {
@@ -45,24 +44,30 @@
     }
 
 }
+.thread_container {
+    width: 500px;
+}
+@media (max-width : 600px) {
+    .thread_container {
+        width: 300px;
+    }
+}
 
 .threadCard {
-    width: 270px;
-    height: 250px;
-    @include bgBlur();
+    width: 100%;
+    min-height: 200px;
+    max-height: 300px;
     overflow: hidden;
     flex-direction: column;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    margin: 10px;
     padding: 10px;
-    border-radius: 10px;
     z-index: 3;
-    cursor: pointer;
+    border: 0.2px solid rgba(233, 229, 229, 0.26);
 
     .thread_profile {
-        height: 50px;
+        height: 40px;
         width: 100%;
         @include allCenter();
         justify-content: flex-start;
@@ -78,12 +83,13 @@
             color: white;
             margin-left: 10px;
             font-weight: bold;
-            text-transform: uppercase;
+            text-transform: capitalize;
         }
     }
 
     .thread_main {
-        height: 150px;
+        min-height: 100px;
+        max-height: 150px;
         width: 100%;
         text-align: start;
 
@@ -98,17 +104,22 @@
         display: flex;
         padding: 5px;
         width: 100%;
-        height: 50px;
-        text-align: start;
+        height: 40px;
         align-items: flex-end;
-        border-top: 0.3px solid rgba(255, 255, 255, 0.17);
+        justify-content: space-between;
         a,
         button {
-            font-size: 18px;
+            font-size: 13px;
             color: white;
             margin: 0 10px;
             font-weight: 300;
+            cursor: pointer;
         }
 
     }
+}
+
+.thread_profile {
+    width: 100%;
+    @include allCenter();
 }

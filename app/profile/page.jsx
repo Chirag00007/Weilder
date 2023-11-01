@@ -3,7 +3,7 @@ import { useSession } from 'next-auth/react'
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React, { useEffect } from 'react'
-import ProfileCard from '../ProfileCard';
+import ProfileCard from './ProfileCard';
 
 const page = () => {
 
