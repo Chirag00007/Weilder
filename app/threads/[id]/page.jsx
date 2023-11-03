@@ -1,38 +1,24 @@
-'use client'
+import SingleThread from "./SingleThread"
 
-export async function generateMetadata({ params }) {
-  // read route params
-  const id = params.id
 
-  // fetch data
-  const thread = await fetch(`/api/threads/${id}`).then((res) => res.json())
-  const data = await thread.json();
-
-  return {
-    title: data.title,
-  }
+export const metadata = {
+  title : 'Weilders community'
 }
 
-
-const page = ({ params }) => {
-
-  useEffect(() => {
-
-    const handleGet = async () => {
-      // Writting single page code 
-    }
-
-  }, [])
-
-
+const page = () => {
 
 
   return (
     <>
-      <div className={`bg-primary w-[100%] overflow-hidden min-h-[50vh]  `}>
+      <div className={`bg-primary w-[100%] overflow-hidden   flex justify-center `}>
 
-        <div className="singleThread_container w-[400px] border-x-[0.4px] h-full">
+        <div className="singleThread_container w-[400px]">
 
+    {/* main card  */}
+
+        <div className="single_thread">
+          <SingleThread/>
+        </div>
         </div>
       </div>
     </>

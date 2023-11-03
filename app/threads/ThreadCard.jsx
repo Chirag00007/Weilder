@@ -7,37 +7,37 @@ import React, { useEffect, useState } from 'react'
 
 const ThreadCard = ({ id, title, createdBy, image, like, comment, views, createdAt }) => {
 
-  const createdDate = new Date(createdAt);
+    const createdDate = new Date(createdAt);
 
-  // Get the current time
-  const currentDate = new Date();
+    // Get the current time
+    const currentDate = new Date();
 
-  // Calculate the time difference in milliseconds
-  const timeDifference = currentDate - createdDate;
+    // Calculate the time difference in milliseconds
+    const timeDifference = currentDate - createdDate;
 
-  // Define variables to store the time difference in different units
-  const secondsAgo = Math.floor(timeDifference / 1000);
-  const minutesAgo = Math.floor(secondsAgo / 60);
-  const hoursAgo = Math.floor(minutesAgo / 60);
-  const daysAgo = Math.floor(hoursAgo / 24);
-  const monthsAgo = Math.floor(daysAgo / 30);
-  const yearsAgo = Math.floor(monthsAgo / 12);
+    // Define variables to store the time difference in different units
+    const secondsAgo = Math.floor(timeDifference / 1000);
+    const minutesAgo = Math.floor(secondsAgo / 60);
+    const hoursAgo = Math.floor(minutesAgo / 60);
+    const daysAgo = Math.floor(hoursAgo / 24);
+    const monthsAgo = Math.floor(daysAgo / 30);
+    const yearsAgo = Math.floor(monthsAgo / 12);
 
-  // Create a variable to hold the time ago message
-  let timeAgoMessage;
+    // Create a variable to hold the time ago message
+    let timeAgoMessage;
 
-  if (yearsAgo > 0) {
-    timeAgoMessage = `${yearsAgo} year${yearsAgo === 1 ? '' : 's'} ago`;
-  } else if (monthsAgo > 0) {
-    timeAgoMessage = `${monthsAgo} month${monthsAgo === 1 ? '' : 's'} ago`;
-  } else if (daysAgo > 0) {
-    timeAgoMessage = `${daysAgo} day${daysAgo === 1 ? '' : 's'} ago`;
-  } else if (hoursAgo > 0) {
-    timeAgoMessage = `${hoursAgo} hour${hoursAgo === 1 ? '' : 's'} ago`;
-  } else if (minutesAgo > 0) {
-    timeAgoMessage = `${minutesAgo} minute${minutesAgo === 1 ? '' : 's'} ago`;
-  } else {
-    timeAgoMessage = `${secondsAgo} second${secondsAgo === 1 ? '' : 's'} ago`;
+    if (yearsAgo > 0) {
+      timeAgoMessage = `${yearsAgo} year${yearsAgo === 1 ? '' : 's'} ago`;
+    } else if (monthsAgo > 0) {
+      timeAgoMessage = `${monthsAgo} month${monthsAgo === 1 ? '' : 's'} ago`;
+    } else if (daysAgo > 0) {
+      timeAgoMessage = `${daysAgo} day${daysAgo === 1 ? '' : 's'} ago`;
+    } else if (hoursAgo > 0) {
+      timeAgoMessage = `${hoursAgo} hour${hoursAgo === 1 ? '' : 's'} ago`;
+    } else if (minutesAgo > 0) {
+      timeAgoMessage = `${minutesAgo} minute${minutesAgo === 1 ? '' : 's'} ago`;
+    } else {
+      timeAgoMessage = `${secondsAgo} second${secondsAgo === 1 ? '' : 's'} ago`;
   }
 
   const { data: session } = useSession();
@@ -84,7 +84,7 @@ const ThreadCard = ({ id, title, createdBy, image, like, comment, views, created
       if(session?.user) {
         checkUserLike();
       }
-    }, [id, session]);
+    }, [ session]);
   
   
 // views counting 

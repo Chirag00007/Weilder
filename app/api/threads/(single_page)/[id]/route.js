@@ -7,7 +7,7 @@ export async function GET(request, {params}) {
         await connectDB();
        
 
-        const thread = await Thread.findOne({params})
+        const thread = await Thread.findById(params.id).populate('createdBy' , ['name' , 'image']).populate('comments.author' , ['name' , 'image'])
         if(!thread) {
             return new Response(`Can't find thred` , {status : 404})
         }

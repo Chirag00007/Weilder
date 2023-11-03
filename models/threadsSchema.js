@@ -18,7 +18,7 @@ const threadsSchema = new mongoose.Schema({
     },
     likes: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
     comments: [{ 
-        type: String,
+         comment : {type: String},
          author: { type: mongoose.Schema.Types.ObjectId,  ref: 'User' }
      }],
      createdAt : {
