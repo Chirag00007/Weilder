@@ -10,7 +10,7 @@ const page = () => {
 
   return (
     <>
-      <div className={`bg-primary w-[100%] overflow-hidden   flex justify-center `}>
+      <div className={`bg-primary w-[100%] overflow-hidden min-h-screen   flex justify-center `}>
 
         <div className="singleThread_container w-[400px]">
 

@@ -22,15 +22,22 @@ const page = () => {
 
     return (
         <>
-            <div className={`bg-primary  ${styles.flexCenter} flex-col  overflow-hidden`}>
+            <div className={`bg-primary min-h-screen  ${styles.flexCenter} flex-col  overflow-hidden`}>
 
                 <div className="thread_container  mx-auto flex-col items-start justify-center py-[30px] relative">
 
-                    {thread.map((e) =>
+                    { thread && thread ? thread.map((e) =>
                         <>
                             <ThreadCard id={e._id} title={e.title} createdBy={e.createdBy.name} image={e.createdBy.image} like={e.likes.length} comment={e.comments} views={e.views} createdAt={e.createdAt} />
                         </>
-                    )}
+                    )
+                :
+                    <>
+                        <div className={`bg-primary  ${styles.flexCenter} flex-col  overflow-hidden`}>
+                            <h1 className='text-[45px] text-white font-poppins' > Threads are not available</h1>
+                        </div>
+                    </>
+                }
 
                     {/* gradient start */}
                     <div className="absolute z-[0] w-[40%] h-[35%] top-[20%] pink__gradient" />
